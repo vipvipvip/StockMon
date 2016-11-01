@@ -1,0 +1,1352 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif\r\n"
+    "#include ""res\\StockMon.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_STATEICONS          BITMAP                  "res\\stateico.bmp"
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_SMALL_ARROWS        BITMAP                  "res\\bmp00002.bmp"
+IDB_LARGE_ARROWS        BITMAP                  "res\\arrows1.bmp"
+IDB_BBB_LOGO            BITMAP                  "res\\BBB16BMP.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR 16, 15
+BEGIN
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    BUTTON      ID_VIEW_LARGEICONS
+    BUTTON      ID_VIEW_SMALLICONS
+    BUTTON      ID_VIEW_LIST
+    BUTTON      ID_VIEW_CLIENTWIDTHSEL
+    SEPARATOR
+    BUTTON      ID_VIEW_CLIENTWIDTHSEL
+    SEPARATOR
+    BUTTON      ID_VIEW_REFRESH
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE_AS
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "&Mail this portfolio ...",    ID_FILE_SEND_MAIL
+        MENUITEM SEPARATOR
+        MENUITEM "Import ISM ...",              ID_FILE_IMPORT_ISM
+        MENUITEM "Import",                      ID_FILE_IMPORT
+        MENUITEM "Import Tickers from FileNames...", ID_FILE_IMPORT_TICKERS
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&Portfolio"
+    BEGIN
+        MENUITEM "Add t&icker\tIns",            ID_PORTFOLIO_ADDTICKER
+        MENUITEM "Add &Indian Stock\tCtrl+Ins", ID_PORTFOLIO_ADDFUND
+        MENUITEM "&Delete\tDel",                ID_PORTFOLIO_DELETETICKER
+        MENUITEM "Delete Over Valued Stocks\tCtr+D", ID_PORTFOLIO_DELOVERVALUED
+        MENUITEM SEPARATOR
+        MENUITEM "&Screen ...\tCtrl+E",         ID_PORTFOLIO_SCREEN
+        MENUITEM SEPARATOR
+        MENUITEM "&Update Selected\tCtrl+U",    ID_PORTFOLIO_UPDATESELECTED
+        MENUITEM "Get Company Fundamentals",    ID_PORTFOLIO_GETCOMPANYFUNDAMENTALS
+        MENUITEM SEPARATOR
+        MENUITEM "T&rade ...\tCtrl+R",          ID_PORTFOLIO_TRADE
+        MENUITEM "Init Trades",                 ID_PORTFOLIO_INITTRADES
+        MENUITEM "Delete All Trades",           ID_PORTFOLIO_DELETEALLTRADES
+        MENUITEM "Export CSV",                  ID_PORTFOLIO_EXPORT
+        POPUP "Standard Index &Tickers"
+        BEGIN
+            MENUITEM "Nasda&q Composite",           ID_PORTFOLIO_ADDINDEXTICKERS_NASDAQCOMPOSITE
+            MENUITEM "&DJIA",                       ID_PORTFOLIO_ADDINDEXTICKERS_DJIA
+            MENUITEM SEPARATOR
+            MENUITEM "Add All of the a&bove",       ID_PORTFOLIO_ADDINDEXTICKERS_ADDALLOFTHEABOVE
+            MENUITEM "Remov&e all of the above",    ID_PORTFOLIO_ADDINDEXTICKERS_REMOVEALLOFTHEABOVE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Valuation",                   ID_PORTFOLIO_VALUATION
+        MENUITEM "RGB",                         ID_PORTFOLIO_RGB
+        MENUITEM "Get News",                    ID_PORTFOLIO_GETNEWS
+        MENUITEM SEPARATOR
+        POPUP "Sort"
+        BEGIN
+            POPUP "Alert"
+            BEGIN
+                MENUITEM "Closest to Low Price",        ID_PORTFOLIO_SORT_ALERT_CLOSESTTOLOWPRICE
+                MENUITEM "Closest to High Price",       ID_PORTFOLIO_SORT_ALERT_CLOSESTTOHIGHPRICE
+            END
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "Notes ...",                   ID_PORTFOLIO_NOTES
+        MENUITEM "Get Top Holdings",            ID_PORTFOLIO_GETTOPHOLDINGS
+    END
+    POPUP "&Summary"
+    BEGIN
+        MENUITEM "&NYSE",                       ID_SUMMARY_NYSE
+        MENUITEM "NASDA&Q",                     ID_SUMMARY_NASDAQ
+        MENUITEM "&AMEX",                       ID_SUMMARY_AMEX
+        MENUITEM SEPARATOR
+        POPUP "Yahoo - NYSE"
+        BEGIN
+            MENUITEM "Volume Leaders",              ID_SUMMARY_YAHOONYSE_VOLUMELEADERS
+            MENUITEM "Price Gainers",               ID_SUMMARY_YAHOONYSE_PRICEGAINERS
+        END
+        POPUP "Yahoo - NASDAQ"
+        BEGIN
+            MENUITEM "Volume Leaders",              ID_SUMMARY_YAHOONASDAQ_VOLUMELEADERS
+            MENUITEM "Price Gainers",               ID_SUMMARY_YAHOONASDAQ_PRICEGAINERS
+        END
+        POPUP "Yahoo - AMEX"
+        BEGIN
+            MENUITEM "Volume Leaders",              ID_SUMMARY_YAHOOAMEX_VOLUMELEADERS
+            MENUITEM "Price Gainers",               ID_SUMMARY_YAHOOAMEX_PRICEGAINERS
+        END
+        MENUITEM "Yahoo - All Volume Gainers",  ID_SUMMARY_YAHOOALLVOLUMEGAINERS
+        MENUITEM "Yahoo - All Price Gainers",   ID_SUMMARY_YAHOOALLPRICEGAINERS
+        MENUITEM "Yahoo - All",                 ID_SUMMARY_YAHOOALL
+        MENUITEM SEPARATOR
+        MENUITEM "WSJ - Summary",               ID_SUMMARY_WSJSUMMARY
+        MENUITEM "WSJ - All",                   ID_SUMMARY_WSJALL
+        MENUITEM SEPARATOR
+        MENUITEM "India - All Volume Gainers",  ID_SUMMARY_INDIAALLVOLUMEGAINERS
+        MENUITEM "India - All Price Gainers",   ID_SUMMARY_INDIAALLPRICEGAINERS
+    END
+    POPUP "&Chart"
+    BEGIN
+        POPUP "&TimeFrame"
+        BEGIN
+            MENUITEM "&1 Day",                      ID_CHART_YAHOO_ONE_DAY
+            MENUITEM "&5 Day",                      ID_CHART_YAHOO_5_DAY
+            MENUITEM "10 Day",                      ID_CHART_YAHOO_10_DAY
+            MENUITEM "&3 Month",                    ID_CHART_YAHOO_3_MONTH
+            MENUITEM "&6 Month",                    ID_CHART_YAHOO_6_MONTH
+            MENUITEM "&1 Year",                     ID_CHART_YAHOO_1_YEAR
+            MENUITEM "&2 Year",                     ID_CHART_YAHOO_2_YEAR
+            MENUITEM "&5 Year",                     ID_CHART_YAHOO_5_YEAR
+            MENUITEM "&Max",                        ID_CHART_YAHOO_MAX
+        END
+        MENUITEM SEPARATOR
+        POPUP "&Type"
+        BEGIN
+            MENUITEM "&Line",                       ID_CHART_TYPE_LINE
+            MENUITEM "&Bar",                        ID_CHART_TYPE_BAR
+            MENUITEM "&Candle",                     ID_CHART_TYPE_CANDLE
+        END
+        POPUP "Site"
+        BEGIN
+            MENUITEM "Yahoo",                       ID_SITE_YAHOO
+            MENUITEM "TD",                          ID_SITE_TD
+        END
+        MENUITEM SEPARATOR
+        POPUP "Compare With"
+        BEGIN
+            MENUITEM "S&P500",                      ID_COMPAREWITH_SP500
+            MENUITEM "Nasdaq",                      ID_COMPAREWITH_NASDAQ
+            MENUITEM "Dow",                         ID_COMPAREWITH_DOW
+            MENUITEM "Clear",                       ID_COMPAREWITH_CLEAR
+        END
+    END
+    POPUP "&Browser"
+    BEGIN
+        MENUITEM "&Stop",                       ID_BROWSER_STOP
+        MENUITEM "&Back",                       ID_BROWSER_BACK
+        MENUITEM "&Forward",                    ID_BROWSER_FORWARD
+        MENUITEM "&Refresh",                    ID_BROWSER_REFRESH
+    END
+    POPUP "&Favorites"
+    BEGIN
+        MENUITEM "   ",                         ID_FAVORITES
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+        MENUITEM "S&plit",                      ID_WINDOW_SPLIT
+        MENUITEM SEPARATOR
+        MENUITEM "Lar&ge Icons",                ID_VIEW_LARGEICONS
+        MENUITEM "S&mall Icons",                ID_VIEW_SMALLICONS
+        MENUITEM "&List",                       ID_VIEW_MYLIST
+        MENUITEM "Full &Row Details",           ID_VIEW_ROWDETAILS
+        MENUITEM SEPARATOR
+        MENUITEM "&Client Width Selection",     ID_VIEW_CLIENTWIDTHSEL
+        MENUITEM SEPARATOR
+        MENUITEM "Refres&h Prices\tF5",         ID_VIEW_REFRESH
+        MENUITEM "Refresh Graphs\tF6",          ID_VIEW_REFRESHGRAPHS
+        MENUITEM "Refresh Valuation\tF9",       ID_VIEW_REFRESHVALUATION
+        MENUITEM "Refilter Valuation",          ID_VIEW_REFILTERVALUATION
+        MENUITEM "Refresh RGB\tF8",             ID_VIEW_REFRESHRGB
+        MENUITEM "Refilter RGB",                ID_VIEW_REFILTERRGB
+        MENUITEM "&Options ...\tF7",            ID_VIEW_OPTIONS
+        MENUITEM "View &Market Summary\tCtrl + M", ID_VIEW_MKT_SUMMARY
+        MENUITEM "View &Quotes\tCtrl + Q",      ID_VIEW_VIEWQUOTES
+        MENUITEM "View Screening",              ID_VIEW_VIEWSCREENING
+        MENUITEM "View Fundamentals",           ID_VIEW_VIEWFUNDAMENTALS
+        MENUITEM "View Valuations",             ID_VIEW_VIEWVALUATIONS
+        MENUITEM "View Browser",                ID_VIEW_VIEWBROWSER
+        MENUITEM "View RGB",                    ID_VIEW_VIEWRBG
+        MENUITEM "Show Recommendations",        ID_VIEW_SHOWRECOMMENDATIONS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "How to Register ...",         ID_HELP_HOWTOREGISTER
+        MENUITEM "&About Internet Stock Monitor...", ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_MENU MENU
+BEGIN
+    POPUP "                      "
+    BEGIN
+        MENUITEM "&Add ticker",                 ID_PORTFOLIO_ADDTICKER
+        MENUITEM "Add &Indian Stock",           ID_PORTFOLIO_ADDFUND
+        MENUITEM "&Delete",                     ID_PORTFOLIO_DELETETICKER
+        MENUITEM SEPARATOR
+        MENUITEM "&Update Price",               ID_PORTFOLIO_UPDATESELECTED
+        POPUP "Charts"
+        BEGIN
+            POPUP "&TimeFrame"
+            BEGIN
+                MENUITEM "&1 Day",                      ID_CHART_YAHOO_ONE_DAY
+                MENUITEM "&5 Day",                      ID_CHART_YAHOO_5_DAY
+                MENUITEM "10 Day",                      ID_CHART_YAHOO_10_DAY
+                MENUITEM "&3 Month",                    ID_CHART_YAHOO_3_MONTH
+                MENUITEM "&6 Month",                    ID_CHART_YAHOO_6_MONTH
+                MENUITEM "&1 Year",                     ID_CHART_YAHOO_1_YEAR
+                MENUITEM "&2 Year",                     ID_CHART_YAHOO_2_YEAR
+                MENUITEM "&5 Year",                     ID_CHART_YAHOO_5_YEAR
+                MENUITEM "&Max",                        ID_CHART_YAHOO_MAX
+            END
+            POPUP "Site"
+            BEGIN
+                MENUITEM "Yahoo",                       ID_SITE_YAHOO
+                MENUITEM "TD",                          ID_SITE_TD
+            END
+        END
+        MENUITEM "T&rade ...",                  ID_PORTFOLIO_TRADE
+        MENUITEM "Get Company Fundamentals",    ID_PORTFOLIO_GETCOMPANYFUNDAMENTALS
+        MENUITEM "&Valuation",                  ID__VALUATION
+        MENUITEM "Get News",                    ID_PORTFOLIO_GETNEWS
+        MENUITEM SEPARATOR
+        MENUITEM "Options",                     ID_VIEW_OPTIONS
+        MENUITEM "Refresh Prices",              ID_VIEW_REFRESH
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG 0, 0, 217, 110
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Internet Stock Monitor"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,178,7,32,14,WS_GROUP
+    LTEXT           "Internet Stock Monitor Version 1.5",IDC_STATIC,77,38,119,8,SS_NOPREFIX
+    LTEXT           "Bit By Bit",IDC_STATIC,77,47,107,8
+    LTEXT           "Copyright © 1998",IDC_STATIC,77,56,64,8
+    LTEXT           "",IDC_AUTH_KEY,76,74,133,8
+    CONTROL         IDB_BBB_LOGO,IDC_STATIC,"Static",SS_BITMAP,7,7,68,59
+    LTEXT           "Authorization Key:",IDC_STATIC,12,73,58,8
+    LTEXT           "",IDC_MESSAGE,66,95,122,8
+    LTEXT           "",IDC_BUILD_DATE,76,85,133,8
+    LTEXT           "Build date:",IDC_STATIC,36,84,34,8
+END
+
+IDD_PREF_GENERAL DIALOG 0, 0, 214, 157
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+CAPTION "General"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Force symbols to upper-case",ID_GEN_UPPER_CASE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,19,113,10
+    CONTROL         "Ask before deleting symbol",D_GEN_CONFIRM_DEL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,32,104,10
+    CONTROL         "Automatically save document on exit",ID_GEN_AUTO_SAVE_DOC,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,44,137,10
+    GROUPBOX        "General Options",IDC_STATIC,8,7,200,55
+    GROUPBOX        "Display Options:",IDC_STATIC,8,69,200,41
+    CONTROL         "View fractions",IDC_VIEW_FRACTIONS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,15,81,141,10
+    CONTROL         "View Decimals",IDC_VIEW_DECIMALS,"Button",BS_AUTORADIOBUTTON,15,93,154,10
+END
+
+IDD_PREF_UPDATES DIALOG 0, 0, 214, 157
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+CAPTION "Updates"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Disable automatic updates",ID_UPDATE_DISABLE_AUTO,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,12,19,105,10
+    CONTROL         "Enable automatic updates on all days ( incl Weekends )",ID_UPDATES_ENABLE_ALWAYS,
+                    "Button",BS_AUTORADIOBUTTON,12,32,191,10
+    CONTROL         "Enable automatic updates during market hours",ID_UPDATES_ENABLE_MKT_HRS,
+                    "Button",BS_AUTORADIOBUTTON,12,45,166,10
+    EDITTEXT        ID_UPDATE_OPEN,54,59,39,14,ES_AUTOHSCROLL | WS_GROUP
+    EDITTEXT        ID_UPDATE_CLOSE,140,59,39,14,ES_AUTOHSCROLL
+    CONTROL         "Disable automatic updates on weekends",ID_UPDATES_NO_WKENDS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,90,150,10
+    LTEXT           "Update prices every",IDC_STATIC,12,122,66,8
+    EDITTEXT        ID_UPDATES_INTERVAL,95,119,32,14,ES_AUTOHSCROLL
+    LTEXT           "seconds",IDC_STATIC,130,122,28,8
+    GROUPBOX        "Options",IDC_STATIC,7,111,201,39
+    GROUPBOX        "Automation",IDC_STATIC,7,7,200,98
+    LTEXT           "Open:",IDC_STATIC,28,62,23,8
+    LTEXT           "Close:",IDC_STATIC,110,62,27,8
+    CTEXT           "(Specify market hours as HH:MM 24-hour local time.)",IDC_STATIC,20,76,173,8
+    LTEXT           "Max stocks in a request",IDC_STATIC,12,136,84,8
+    EDITTEXT        IDC_EDIT2,95,133,33,14,ES_AUTOHSCROLL
+END
+
+IDD_PREF_PROXY DIALOG 0, 0, 214, 157
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+CAPTION "Connection"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "Connect using the following predefined connection",IDC_MODEM,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,13,18,189,10
+    COMBOBOX        IDC_DUP,27,33,92,80,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Manage ...",IDC_NEWCONN,139,31,50,14
+    CONTROL         "Do not dial - use existing connection",IDC_USEEXISTING,
+                    "Button",BS_AUTORADIOBUTTON,13,53,130,10
+    CONTROL         "Hangup Connection when not in use",IDC_HANGUP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,69,131,10
+    CONTROL         "Connect using this proxy on my LAN",ID_PROXY_USE_PROXY,
+                    "Button",BS_AUTORADIOBUTTON,13,98,180,10
+    EDITTEXT        ID_PROXY_HOST,38,114,83,14,ES_AUTOHSCROLL
+    EDITTEXT        ID_PROXY_PORT,163,114,27,14,ES_AUTOHSCROLL
+    LTEXT           "Port",IDC_STATIC,138,117,20,8
+    GROUPBOX        "Proxy Host",IDC_STATIC,5,85,200,68
+    LTEXT           "Host",IDC_STATIC,12,117,21,8
+    GROUPBOX        "Modem",IDC_STATIC,5,6,200,77
+END
+
+IDD_OPTIONS DIALOG 0, 0, 229, 181
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,172,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,172,24,50,14
+END
+
+IDD_CONFIRM_DEL_DLG DIALOG 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Confirm Delete"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Yes",IDOK,35,74,50,14
+    PUSHBUTTON      "&No",IDCANCEL,101,74,50,14
+    LTEXT           "Are you sure you want to delete this symbol?.",IDC_STATIC,14,41,157,11
+END
+
+IDD_SET_ALERT_DLG DIALOG 0, 0, 257, 170
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Alert"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_SYMBOLS,15,19,83,134,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Symbol Information:",IDC_STATIC,107,17,133,77
+    LTEXT           "Last",IDC_STATIC,140,28,16,8
+    LTEXT           "High",IDC_STATIC,140,50,16,8
+    LTEXT           "Low",IDC_STATIC,142,61,14,8
+    LTEXT           "Volume",IDC_STATIC,132,72,24,8
+    LTEXT           "Change",IDC_STATIC,130,39,26,8
+    LTEXT           "Last Updated",IDC_STATIC,112,83,44,8
+    LTEXT           "Portfolio:",IDC_STATIC,15,10,39,8
+    GROUPBOX        "Target Price",IDC_STATIC,107,103,133,50
+    EDITTEXT        IDC_EDIT1,135,114,40,14,ES_AUTOHSCROLL
+    LTEXT           "Low",IDC_STATIC,115,116,17,8
+    LTEXT           "High",IDC_STATIC,115,133,16,8
+    EDITTEXT        IDC_EDIT2,136,131,40,14,ES_AUTOHSCROLL
+    LTEXT           "Last",IDC_LAST,162,28,60,8
+    LTEXT           "Change",IDC_CHANGE,162,39,63,8
+    LTEXT           "High",IDC_HIGH,162,50,64,8
+    LTEXT           "Low",IDC_LOW,162,61,67,8
+    LTEXT           "Volume",IDC_VOLUME,162,72,71,8
+    LTEXT           "Last Updated",IDC_LASTUPDATED,162,83,72,8
+    PUSHBUTTON      "&Apply",IDC_APPLY,181,121,27,14
+END
+
+IDD_CONFIG_ALERT_DLG DIALOG 0, 0, 214, 162
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_DISABLED | WS_CAPTION | WS_SYSMENU
+CAPTION "Price Alerts"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "No alerts",IDC_ALERT_NO_ALERT,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,11,19,49,10
+    CONTROL         "Flash window",IDC_ALERT_FLASH_WND,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,32,60,10
+    CONTROL         "Bring window to top",IDC_ALERT_WND_TOP,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,45,77,10
+    CONTROL         "Beep",IDC_ALERT_BEEP,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,58,36,10
+    CONTROL         "Play .WAV file:",IDC_ALERT_PLAY_WAV,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,71,64,10
+    LTEXT           "File Name",1022,23,82,179,8
+    PUSHBUTTON      "&Select...",IDC_SELECT_WAV_FILE,168,69,34,14
+    CONTROL         "Once per update",IDC_ALERT_FREQ_ONCE,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,11,116,90,10
+    CONTROL         "Repeat every",IDC_ALERT_REPEAT,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,11,129,58,10
+    EDITTEXT        IDC_ALERT_SECONDS,71,127,28,14,ES_AUTOHSCROLL
+    LTEXT           "seconds",IDC_ALERT_SEC,101,130,33,8
+    GROUPBOX        "Alert Type",IDC_ALERT_SEC,7,7,200,94
+    GROUPBOX        "Alert Frequency",IDC_ALERT_SEC,7,103,200,43
+END
+
+IDD_PREF_CHART_DLG DIALOGEX 0, 0, 214, 162
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Charts"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    COMBOBOX        IDC_CHART_PTS,77,34,48,72,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CHART_TYPE,129,33,48,72,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Copy charts to:",IDC_STATIC,15,20,55,8
+    LTEXT           "Duration",IDC_STATIC,17,38,51,8
+    EDITTEXT        IDC_CHART_LOC2,77,17,100,14,ES_AUTOHSCROLL
+    LTEXT           "Chart String",IDC_STATIC,17,55,55,8
+    EDITTEXT        IDC_CHART_STRING,77,53,130,14,ES_AUTOHSCROLL
+END
+
+IDD_REGISTER_DLG DIALOG 0, 0, 272, 186
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "How to Register"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,208,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,208,24,50,14
+    GROUPBOX        "Register",IDC_STATIC,13,15,191,154
+    LTEXT           "",IDC_REG_INSTRUCTIONS,25,31,172,113
+    LTEXT           "Authorization Key:",IDC_STATIC,20,151,60,8
+    LTEXT           "",IDC_REGISTER_KEY,83,151,119,8
+END
+
+IDD_TRADE_DLG DIALOG 0, 0, 266, 191
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Trade"
+FONT 8, "MS Sans Serif"
+BEGIN
+    CONTROL         "&Buy",IDC_BUY,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,111,58,28,10
+    CONTROL         "&Sell",IDC_SELL,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,173,58,27,10
+    EDITTEXT        IDC_DATE,149,81,68,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_PRICE,149,97,68,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_SHARES,149,113,68,14,ES_AUTOHSCROLL | WS_DISABLED
+    EDITTEXT        IDC_COMMISION,149,128,68,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "",IDC_AMOUNT,149,145,69,8
+    LISTBOX         IDC_PORTFOLIO,13,16,90,130,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,75,170,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,141,170,50,14
+    LTEXT           "Portfolio",IDC_STATIC,13,8,29,8
+    GROUPBOX        "Current Quote:",IDC_STATIC,108,11,144,43
+    GROUPBOX        "Buy/Sell:",IDC_STATIC,109,71,143,89
+    LTEXT           "Date:",IDC_STATIC,129,85,18,8
+    LTEXT           "Price:",IDC_STATIC,128,100,19,8
+    LTEXT           "Shares:",IDC_STATIC,122,116,25,8
+    LTEXT           "Commision:",IDC_STATIC,111,131,36,8
+    LTEXT           "Amount:",IDC_STATIC,120,144,27,8
+    LTEXT           "Last:",IDC_STATIC,121,24,16,8
+    LTEXT           "Change:",IDC_STATIC,109,33,28,8
+    LTEXT           "Volume:",IDC_STATIC,111,42,26,8
+    LTEXT           "Last",IDC_LAST,138,24,31,8
+    LTEXT           "Change",IDC_CHANGE,138,34,26,8
+    LTEXT           "Volume",IDC_VOLUME,138,43,66,8
+    LTEXT           "Day High:",IDC_STATIC,174,25,32,8
+    LTEXT           "Day Low:",IDC_STATIC,174,33,31,8
+    LTEXT           "Day High",IDC_DAY_HI,210,26,40,8
+    LTEXT           "Day Low",IDC_DAY_LOW,209,34,40,8
+    PUSHBUTTON      "&Apply",IDB_APPLY,224,143,26,14,WS_DISABLED
+END
+
+IDD_TRADE_DETAILS_DLG DIALOG 0, 0, 334, 197
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Trade Details"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "&Done",IDOK,277,20,50,14
+    LISTBOX         IDC_PORTFOLIO,13,13,259,49,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "List2",IDC_TRADE_DTLS,"SysListView32",LVS_REPORT | LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,13,70,307,113
+    PUSHBUTTON      "&Buy/Sell",IDB_TRADE,277,42,50,14
+END
+
+IDD_TECH_CHART_DLG DIALOG 0, 0, 341, 218
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Techincal Charting"
+FONT 8, "MS Sans Serif"
+BEGIN
+    LISTBOX         IDC_TICKER_LB,13,15,63,172,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_CHART_TYPE,156,23,48,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_EXP_MA_1,102,50,48,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_EXP_MA_2,156,50,48,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_EXP_MA_3,207,50,48,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_TIME_HORIZON,156,66,70,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Volume",IDC_VOLUME_RB,"Button",BS_AUTORADIOBUTTON | WS_GROUP,85,109,39,10
+    CONTROL         "&On Balance Volume",IDC_OBV_RB,"Button",BS_AUTORADIOBUTTON,85,121,79,10
+    CONTROL         "&Stochastics",IDC_STOC_RB,"Button",BS_AUTORADIOBUTTON,85,133,53,10
+    COMBOBOX        IDC_STOC_VALUE,204,130,72,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Wilder's Relative Strength Index:",IDC_WILDER_RSI_RB,
+                    "Button",BS_AUTORADIOBUTTON,85,145,117,10
+    COMBOBOX        IDC_RSI_VALUE,204,144,72,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&MACD",IDC_MACD_RB,"Button",BS_AUTORADIOBUTTON,85,157,37,10
+    COMBOBOX        IDC_MACD_VALUE,204,157,72,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "&Price Rate of Change",IDC_PRICE_ROC_RB,"Button",BS_AUTORADIOBUTTON,85,169,84,10
+    COMBOBOX        IDC_PRICE_ROC_VALUE,204,170,72,60,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "Create &Chart",ID_GET_CHART,114,197,50,14
+    PUSHBUTTON      "Done",IDCANCEL,180,197,50,14
+    GROUPBOX        "General Parameters:",IDC_STATIC,82,15,196,79
+    LTEXT           "Chart Type:",IDC_STATIC,88,25,38,8
+    LTEXT           "Exponential Mov. Avg:",IDC_STATIC,88,41,72,8
+    LTEXT           "Time Horizon:",IDC_STATIC,88,69,44,8
+    GROUPBOX        "Indicators:",IDC_STATIC,81,96,196,92
+    PUSHBUTTON      "&Apply to Ticker",IDC_APPLY,281,91,51,14
+    CONTROL         "&Logarithmic price scale",IDC_LOG_SCALE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,89,80,89,10
+END
+
+IDD_STK_SCREEN_DLG DIALOG 0, 0, 403, 298
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Screen"
+FONT 8, "MS Sans Serif"
+BEGIN
+    EDITTEXT        IDC_SCR_PRICE_MIN,78,25,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_PRICE_MAX,123,25,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_PB_RATIO_MIN,78,42,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_PB_RATIO_MAX,123,42,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_PS_RATIO_MIN,78,58,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_PS_RATIO_MAX,123,58,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_PE_MIN,251,25,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_PE_MAX,296,25,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_BETA_MIN,251,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_BETA_MAX,296,43,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_YIELD_MIN,251,59,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_YIELD_MAX,296,59,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_EPS_CHG_MIN,78,98,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_EPS_CHG_MAX,123,98,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_GR_MIN,251,98,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_GR_MAX,296,98,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_DP_MIN,78,136,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_DP_MAX,123,136,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_ROE_MIN,78,153,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_ROE_MAX,123,153,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_DE_MIN,251,136,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_DE_MAX,296,136,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_SALES_MIN,78,194,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_SALES_MAX,123,194,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_MKTCAP_MIN,251,194,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SCR_MKTCAP_MAX,296,194,40,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_DJ,78,228,70,70,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_SP500,78,242,70,70,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_INDUSTRY_GRP,78,255,246,70,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_EXCHANGES,78,268,75,70,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,346,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,346,24,50,14
+    GROUPBOX        "Price and Valuation Criteria:",IDC_STATIC,7,7,333,70
+    LTEXT           "Price to Book Ratio:",IDC_STATIC,14,46,64,8
+    LTEXT           "Price to Sales Ratio:",IDC_STATIC,13,61,65,8
+    LTEXT           "Min",IDC_STATIC,89,16,12,8
+    LTEXT           "Max",IDC_STATIC,133,16,14,8
+    LTEXT           "Price ($):",IDC_STATIC,49,29,29,8
+    LTEXT           "Beta:",IDC_STATIC,233,46,18,8
+    LTEXT           "Yield:",IDC_STATIC,233,61,18,8
+    LTEXT           "Min",IDC_STATIC,262,16,12,8
+    LTEXT           "Max",IDC_STATIC,306,16,14,8
+    LTEXT           "P/E:",IDC_STATIC,235,30,16,8
+    GROUPBOX        "Growth Criteria:",IDC_STATIC,7,79,333,36
+    LTEXT           "Min",IDC_STATIC,89,89,12,8
+    LTEXT           "Max",IDC_STATIC,133,89,14,8
+    LTEXT           "Last Qtr %EPS Chg:",IDC_STATIC,11,102,64,8
+    LTEXT           "Min",IDC_STATIC,262,89,12,8
+    LTEXT           "Max",IDC_STATIC,306,89,14,8
+    LTEXT           "5 Yr Growth Rate:",IDC_STATIC,193,103,58,8
+    GROUPBOX        "Capitailzation Ratios:",IDC_STATIC,7,119,333,54
+    LTEXT           "Return on Equity (%):",IDC_STATIC,11,156,67,8
+    LTEXT           "Min",IDC_STATIC,89,126,12,8
+    LTEXT           "Max",IDC_STATIC,133,126,14,8
+    LTEXT           "Div. Payout (%):",IDC_STATIC,27,139,51,8
+    LTEXT           "Min",IDC_STATIC,262,126,12,8
+    LTEXT           "Max",IDC_STATIC,306,126,14,8
+    LTEXT           "Debt to Equity:",IDC_STATIC,203,140,48,8
+    GROUPBOX        "Size Criteria:",IDC_STATIC,7,175,333,36
+    LTEXT           "Min",IDC_STATIC,89,185,12,8
+    LTEXT           "Max",IDC_STATIC,133,185,14,8
+    LTEXT           "Sales ($ Millions):",IDC_STATIC,23,198,55,8
+    LTEXT           "Min",IDC_STATIC,262,185,12,8
+    LTEXT           "Max",IDC_STATIC,306,185,14,8
+    LTEXT           "Market Cap ($ Millions):",IDC_STATIC,177,199,74,8
+    GROUPBOX        "Index Membership:",IDC_STATIC,7,213,334,73
+    LTEXT           "Dow Jones:",IDC_STATIC,23,231,38,8
+    LTEXT           "SP 500:",IDC_STATIC,35,245,26,8
+    LTEXT           "Industry Group:",IDC_STATIC,12,256,49,8
+    LTEXT           "Exchanges:",IDC_STATIC,23,270,38,8
+END
+
+IDD_VALUATION_DLG DIALOGEX 0, 0, 219, 223
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Valuation"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_VAL_TICKER,72,20,66,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VAL_NEXT_YR_EPS,72,37,66,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VAL_EST_PRICE,72,54,66,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VAL_BUY_BELOW,72,71,66,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VAL_LAST_QUOTE,72,88,66,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VAL_VALUATION,72,105,66,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_VAL_PROJ_5YR_GROWTH,72,121,66,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,162,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,162,24,50,14
+    LTEXT           "Ticker",IDC_STATIC,38,23,21,8
+    LTEXT           "Next Yr. EPS",IDC_STATIC,17,40,42,8
+    LTEXT           "Est. Price",IDC_STATIC,28,57,31,8
+    LTEXT           "Buy Below",IDC_STATIC,25,74,34,8
+    LTEXT           "Latest Quote",IDC_STATIC,17,91,42,8
+    LTEXT           "Valuation",IDC_STATIC,29,108,30,8
+    LTEXT           "Proj 5Yr Gr",IDC_STATIC,29,124,35,8
+    EDITTEXT        IDC_VAL_CGI,72,137,66,14,ES_AUTOHSCROLL
+    LTEXT           "CGI",IDC_STATIC,29,140,13,8
+    CONTROL         "Don't Update PE",IDC_VAL_UPD_PE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,72,178,64,10
+    CONTROL         "Don't Update Next Yr. EPS",IDC_VAL_UPD_NEXT_YR_EPS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,72,190,100,10
+    CONTROL         "Don't Update Proj 5Yr. Gr",IDC_VAL_UPD_EARN_GRWTH,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,72,201,108,10
+    EDITTEXT        IDC_VAL_PE,72,154,67,14,ES_AUTOHSCROLL
+    LTEXT           "PE",IDC_STATIC,27,158,33,8
+END
+
+IDD_PREF_RGB DIALOGEX 0, 0, 214, 156
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "RGB"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "ROE",IDC_PREF_RGB_ROE_LBL,15,18,21,13
+    EDITTEXT        IDC_EDIT1,42,14,30,16,ES_AUTOHSCROLL
+    LTEXT           "(e.g., 20)",IDC_STATIC,79,18,36,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,4,0,1
+ PRODUCTVERSION 1,4,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "Written by Dikesh Chokshi"
+            VALUE "CompanyName", "Bit By Bit"
+            VALUE "FileDescription", "Internet Stock Monitor Application"
+            VALUE "FileVersion", "1, 4, 0, 1"
+            VALUE "InternalName", "StockMon"
+            VALUE "LegalCopyright", "Copyright © 1997"
+            VALUE "OriginalFilename", "StockMon.EXE"
+            VALUE "ProductName", "Internet Stock Monitor"
+            VALUE "ProductVersion", "1, 4, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 210
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 103
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 222
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 174
+    END
+
+    IDD_CONFIRM_DEL_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_SET_ALERT_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 250
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 163
+    END
+
+    IDD_PREF_CHART_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 155
+    END
+
+    IDD_REGISTER_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_TRADE_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 184
+    END
+
+    IDD_TRADE_DETAILS_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 327
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_TECH_CHART_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 334
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 211
+    END
+
+    IDD_STK_SCREEN_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 396
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 291
+    END
+
+    IDD_VALUATION_DLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 212
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 216
+    END
+
+    IDD_PREF_RGB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 207
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 149
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS
+BEGIN
+    "L",            ID_CHARTS_TECHNICALCHARTING, VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_PORTFOLIO_ADDFUND,   VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_PORTFOLIO_ADDTICKER, VIRTKEY, NOINVERT
+    "T",            ID_PORTFOLIO_COMP_CHARTS, VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_PORTFOLIO_DELETETICKER, VIRTKEY, NOINVERT
+    "D",            ID_PORTFOLIO_DELOVERVALUED, VIRTKEY, CONTROL, NOINVERT
+    "G",            ID_PORTFOLIO_GETSELECTEDGRAPH, VIRTKEY, CONTROL, NOINVERT
+    "E",            ID_PORTFOLIO_SCREEN,    VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_PORTFOLIO_TRADE,     VIRTKEY, CONTROL, NOINVERT
+    "U",            ID_PORTFOLIO_UPDATESELECTED, VIRTKEY, CONTROL, NOINVERT
+    "M",            ID_VIEW_MKT_SUMMARY,    VIRTKEY, CONTROL, NOINVERT
+    VK_F7,          ID_VIEW_OPTIONS,        VIRTKEY, NOINVERT
+    VK_F5,          ID_VIEW_REFRESH,        VIRTKEY, NOINVERT
+    VK_F6,          ID_VIEW_REFRESHGRAPHS,  VIRTKEY, NOINVERT
+    VK_F8,          ID_VIEW_REFRESHRGB,     VIRTKEY, NOINVERT
+    VK_F9,          ID_VIEW_REFRESHVALUATION, VIRTKEY, NOINVERT
+    "Q",            ID_VIEW_VIEWQUOTES,     VIRTKEY, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PREF_CHART_DLG DLGINIT
+BEGIN
+    IDC_CHART_PTS, 0x403, 4, 0
+0x3031, 0x0030, 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3039, "\000" 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3038, "\000" 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3037, "\000" 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3036, "\000" 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3035, "\000" 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3034, "\000" 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3033, "\000" 
+    IDC_CHART_PTS, 0x403, 3, 0
+0x3032, "\000" 
+    IDC_CHART_TYPE, 0x403, 5, 0
+0x6144, 0x7379, "\000" 
+    IDC_CHART_TYPE, 0x403, 6, 0
+0x6557, 0x6b65, 0x0073, 
+    IDC_CHART_TYPE, 0x403, 7, 0
+0x6f4d, 0x746e, 0x7368, "\000" 
+    0
+END
+
+IDD_TECH_CHART_DLG DLGINIT
+BEGIN
+    IDC_CHART_TYPE, 0x403, 4, 0
+0x6142, 0x0072, 
+    IDC_CHART_TYPE, 0x403, 5, 0
+0x694c, 0x656e, "\000" 
+    IDC_CHART_TYPE, 0x403, 7, 0
+0x6143, 0x646e, 0x656c, "\000" 
+    IDC_EXP_MA_1, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_EXP_MA_1, 0x403, 7, 0
+0x3031, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_1, 0x403, 7, 0
+0x3032, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_1, 0x403, 7, 0
+0x3035, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_1, 0x403, 8, 0
+0x3031, 0x2030, 0x6164, 0x0079, 
+    IDC_EXP_MA_1, 0x403, 8, 0
+0x3032, 0x2030, 0x6164, 0x0079, 
+    IDC_EXP_MA_2, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_EXP_MA_2, 0x403, 7, 0
+0x3031, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_2, 0x403, 7, 0
+0x3032, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_2, 0x403, 7, 0
+0x3035, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_2, 0x403, 8, 0
+0x3031, 0x2030, 0x6164, 0x0079, 
+    IDC_EXP_MA_2, 0x403, 8, 0
+0x3032, 0x2030, 0x6164, 0x0079, 
+    IDC_EXP_MA_3, 0x403, 5, 0
+0x6f4e, 0x656e, "\000" 
+    IDC_EXP_MA_3, 0x403, 7, 0
+0x3031, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_3, 0x403, 7, 0
+0x3032, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_3, 0x403, 7, 0
+0x3035, 0x6420, 0x7961, "\000" 
+    IDC_EXP_MA_3, 0x403, 8, 0
+0x3031, 0x2030, 0x6164, 0x0079, 
+    IDC_EXP_MA_3, 0x403, 8, 0
+0x3032, 0x2030, 0x6164, 0x0079, 
+    IDC_TIME_HORIZON, 0x403, 8, 0
+0x2031, 0x6f6d, 0x746e, 0x0068, 
+    IDC_TIME_HORIZON, 0x403, 9, 0
+0x2033, 0x6f6d, 0x746e, 0x7368, "\000" 
+    IDC_TIME_HORIZON, 0x403, 10, 0
+0x3231, 0x6d20, 0x6e6f, 0x6874, 0x0073, 
+    IDC_TIME_HORIZON, 0x403, 10, 0
+0x3831, 0x6d20, 0x6e6f, 0x6874, 0x0073, 
+    IDC_TIME_HORIZON, 0x403, 10, 0
+0x3432, 0x6d20, 0x6e6f, 0x6874, 0x0073, 
+    IDC_STOC_VALUE, 0x403, 9, 0
+0x3531, 0x312d, 0x352d, 0x352d, "\000" 
+    IDC_STOC_VALUE, 0x403, 9, 0
+0x3331, 0x352d, 0x372d, 0x372d, "\000" 
+    IDC_RSI_VALUE, 0x403, 3, 0
+0x3431, "\000" 
+    IDC_MACD_VALUE, 0x403, 8, 0
+0x3231, 0x322d, 0x2d35, 0x0039, 
+    IDC_MACD_VALUE, 0x403, 7, 0
+0x2d38, 0x3731, 0x392d, "\000" 
+    IDC_PRICE_ROC_VALUE, 0x403, 5, 0
+0x3631, 0x382d, "\000" 
+    IDC_PRICE_ROC_VALUE, 0x403, 5, 0
+0x2d33, 0x3531, "\000" 
+    0
+END
+
+IDD_STK_SCREEN_DLG DLGINIT
+BEGIN
+    IDC_DJ, 0x403, 39, 0
+0x6c41, 0x206c, 0x6f43, 0x706d, 0x6e61, 0x6569, 0x2073, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2820, 
+0x2920, "\000" 
+    IDC_DJ, 0x403, 39, 0
+0x654d, 0x626d, 0x7265, 0x6873, 0x7069, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2820, 
+0x2944, "\000" 
+    IDC_DJ, 0x403, 45, 0
+0x6e49, 0x7564, 0x7473, 0x6972, 0x6c61, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x4428, 0x2949, "\000" 
+    IDC_DJ, 0x403, 40, 0
+0x7254, 0x6e61, 0x7073, 0x726f, 0x6174, 0x6974, 0x6e6f, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2820, 
+0x5444, 0x0029, 
+    IDC_DJ, 0x403, 47, 0
+0x7455, 0x6c69, 0x7469, 0x2079, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x4428, 0x2955, "\000" 
+    IDC_DJ, 0x403, 43, 0
+0x6946, 0x616e, 0x636e, 0x6169, 0x206c, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x4428, 0x2946, "\000" 
+    IDC_SP500, 0x403, 39, 0
+0x6c41, 0x206c, 0x6f43, 0x706d, 0x6e61, 0x6569, 0x2073, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2820, 
+0x2920, "\000" 
+    IDC_SP500, 0x403, 39, 0
+0x654d, 0x626d, 0x7265, 0x6873, 0x7069, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2820, 
+0x2953, "\000" 
+    IDC_SP500, 0x403, 45, 0
+0x6e49, 0x7564, 0x7473, 0x6972, 0x6c61, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x5328, 0x2949, "\000" 
+    IDC_SP500, 0x403, 40, 0
+0x7254, 0x6e61, 0x7073, 0x726f, 0x6174, 0x6974, 0x6e6f, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2820, 
+0x5453, 0x0029, 
+    IDC_SP500, 0x403, 47, 0
+0x7455, 0x6c69, 0x7469, 0x2079, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x5328, 0x2955, "\000" 
+    IDC_SP500, 0x403, 43, 0
+0x6946, 0x616e, 0x636e, 0x6169, 0x206c, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x5328, 0x2946, "\000" 
+    IDC_EXCHANGES, 0x403, 37, 0
+0x6c41, 0x206c, 0x7845, 0x6863, 0x6e61, 0x6567, 0x2073, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2928, 
+"\000" 
+    IDC_EXCHANGES, 0x403, 45, 0
+0x594e, 0x4553, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x4e28, 0x5359, 0x2945, "\000" 
+    IDC_EXCHANGES, 0x403, 45, 0
+0x4d41, 0x5845, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x4128, 0x454d, 0x2958, "\000" 
+    IDC_EXCHANGES, 0x403, 36, 0
+0x414e, 0x4453, 0x5141, 0x4e20, 0x7461, 0x6f69, 0x616e, 0x206c, 0x6b4d, 
+0x2074, 0x2020, 0x2020, 0x2020, 0x2820, 0x414e, 0x4453, 0x5141, 0x0029, 
+
+    IDC_EXCHANGES, 0x403, 41, 0
+0x414e, 0x4453, 0x5141, 0x4f20, 0x4354, 0x2020, 0x2020, 0x2020, 0x2020, 
+0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2020, 0x2820, 0x414e, 0x4453, 
+0x5141, 0x2932, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDR_MAINFRAME           "Internet Stock Monitor Application\n\nStockMon\nStock Monitor Files (*.ism)\n.ism\nStockMon.Document\nStockMon Document"
+    ID_MESSAGE_INDICATOR    "No Updates.                                                                              "
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_APP_TITLE       "Internet Stock Monitor"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+    ID_FILE_PRINT_SETUP     "Change the printer and printing options\nPrint Setup"
+    ID_FILE_PRINT           "Print the active document\nPrint"
+    ID_FILE_PRINT_PREVIEW   "Display full pages\nPrint Preview"
+    ID_FILE_SEND_MAIL       "Mail the active document.\nMail"
+END
+
+STRINGTABLE
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    IDS_OPEN_TIME           "9:30"
+    IDS_CLOSE_TIME          "16:30"
+    IDS_PROXY               "tbu.proxy.lucent.com"
+    IDS_PORT                "8000"
+    IDS_IP_DBC              "www.dbc.com"
+    IDS_IP_MONEY            "quote.pathfinder.com"
+    IDS_IP_TECHSTOCKS       "204.71.189.201"
+    IDS_IP_TECHSTKS         "206.79.177.18"
+    IDS_IP_LOMBARD          "208.198.122.11"
+    IDS_POINTS              "100"
+    IDS_TYPES               "Days"
+    IDS_NASDAQ_COMPX        "^IXIC"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_LARGEICONS      "Displays items by using large icons.\nLarge Icons"
+    ID_VIEW_SMALLICONS      "Displays items by using small icons.\nSmall Icons"
+    ID_VIEW_ROWDETAILS      "Displays items details in a window, using the full row selection.\nFull Row Details"
+    ID_VIEW_STATEICONS      "Show or hide state icons\nToggle State Icons"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_LIST            "Displays items in a list.\nList"
+    ID_VIEW_DETAILS         "Displays information about each item in a window.\nDetails"
+END
+
+STRINGTABLE
+BEGIN
+    ID_VIEW_CLIENTWIDTHSEL  "Extend the selection to match the client area width\nClient Width Sel"
+    ID_VIEW_REFRESH         "Refresh prices of all the stocks in the portfolio.\nRefresh prices"
+    ID_VIEW_OPTIONS         "View/Change configuration.\nPreferences"
+    ID_FILES_SAVEAS         "Save the active document under a different name\nSaveAs"
+    ID__UPDATE              "Update the selected stock.\nUpdate"
+END
+
+STRINGTABLE
+BEGIN
+    ID__DELETE              "Delete the selected stock.\nDelete"
+    ID_PORTFOLIO_ADDTICKER  "Add a ticker symbol to the portfolio.\nAdd ticker"
+    ID_PORTFOLIO_DELETETICKER 
+                            "Delete selected ticker symbol from the portfolio.\nDelete ticker"
+    ID_PORTFOLIO_UPDATESELECTED "Update selected ticker symbol.\nUpdate quote"
+    ID_PORTFOLIO_ADDINDEXTICKERS_NASDAQCOMPOSITE 
+                            "Add ticker symbol for Nasdaq Composite Index.\nNasdaq Composite"
+    ID_PORTFOLIO_ADDINDEXTICKERS_DJIA 
+                            "Add ticker symbol for Dow Jones Industrial Average.\nDow Jones Industrial Average"
+    ID_PORTFOLIO_ADDINDEXTICKERS_SP500 
+                            "Add ticker symbol for S&P 500.\nS&P 500"
+    ID_PORTFOLIO_ADDINDEXTICKERS_NYSECOMPOSITE 
+                            "Add ticker symbol for New York Stock Exchange Composite Index.\nNYSE Composite Index"
+    ID_PORTFOLIO_ADDINDEXTICKERS_AMEXMARKETVALUE 
+                            "Add ticker symbol for Amex Index.\nAmex Market Value Index"
+    ID_PORTFOLIO_ADDINDEXTICKERS_SP100 
+                            "Add ticker symbol for S&P 100.\nS&P 100"
+    ID_PORTFOLIO_ADDINDEXTICKERS_RUSSEL2000 
+                            "Add ticker symbol for Russell small cap index.\nRussel 2000"
+    ID_PORTFOLIO_ADDINDEXTICKERS_MAJORMARKETINDEX 
+                            "Add ticker symbol for Major Market Index.\nMMX"
+END
+
+STRINGTABLE
+BEGIN
+    ID_PORTFOLIO_ADDINDEXTICKERS_VALUELINECOMPOSITE 
+                            "Add ticker symbol for Value Line Composite Index.\nValue Line"
+    ID_PORTFOLIO_ADDINDEXTICKERS_WILSHIRESMALLCAP 
+                            "Add ticker symbol for Wilshire Small Cap Index.\nWilshire Small Cap"
+    ID_PORTFOLIO_ADDINDEXTICKERS_ADDALLOFTHEABOVE 
+                            "Add all of the above ticker symbols.\nAdd all standard tickers"
+    ID_PORTFOLIO_ADDINDEXTICKERS_REMOVEALLOFTHEABOVE 
+                            "Remove all the standard tickers.\nRemove standard tickers"
+    ID_PORTFOLIO_ALERT      "Configure price alert for individual stocks in the portfolio.\nConfigure Price Alert"
+    ID_SUMMARY_NASDAQ       "Get volume leaders, percent gainers and losers for NASDAQ.\nNASDAQ market summary"
+    ID_SUMMARY_CLOSE        "Close the Market Summary Window.\nClose Summary"
+    ID_SUMMARY_NYSE         "Get volume leaders, percent gainers and losers for NYSE.\nNYSE market summary"
+    ID_SUMMARY_AMEX         "Get volume leaders, percent gainers and losers for AMEX.\nAMEX market summary"
+    ID_VIEW_MKT_SUMMARY     "Switch to Market Summary View.\nMarket Summary"
+    ID_VIEW_VIEWQUOTES      "Switch to Quotes View.\nQuotes Summary"
+    ID_PORTFOLIO_GETSELECTEDGRAPH 
+                            "Get chart for the selected ticker.\nGet chart"
+    ID_PORTFOLIO_COMP_CHARTS "Compare charts.\nCompare charts."
+END
+
+STRINGTABLE
+BEGIN
+    ID_PORTFOLIO_ADDFUND    "Add a Indian Stock to the portfolio.\nAdd Indian Stock"
+    ID_VIEW_REFRESHGRAPHS   "Refresh graphs of all the stocks in the portfolio.\nRefresh graphs"
+    ID_HELP_HOWTOREGISTER   "Steps to registering this software.\nRegister."
+    ID_PORTFOLIO_TRADE      "Trade selected stock.\nBuy-Sell"
+    ID_CHARTS_GETSELECTEDTECHNICALCHARTS 
+                            "Get technical charts for selected tickers.\nSelected technical charts."
+    ID_CHARTS_GETALLTECHNICALCHARTS 
+                            "Get technical charts for all tickers.\nGet all technical charts."
+    ID_PORTFOLIO_SCREEN     "Build a portfolio by screening stocks based on various criteria."
+    ID_VIEW_VIEWSCREENING   "Switch to screened stocks view"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_INDU                "^DJI"
+    IDS_NYAX                "NYA.X"
+    IDS_INX                 "INX"
+    IDS_XAX                 "XAX.X"
+    IDS_IUX                 "IUX"
+    IDS_MMX                 "MMX"
+    IDS_VLE                 "VLE.X"
+    IDS_WSX                 "WSX.X"
+    IDS_NASDAQT             "nasdaqt"
+    IDS_AMEXT               "amext"
+    IDS_NYSET               "nyset"
+    IDS_TECHSTKS_COY_NOT_FOUND "not found in company table"
+    IDS_NOT_LIC_MSG         "You do not have not a legal copy of this software. The \nAuthorization Key for this application is %s."
+    IDS_OEX                 "OEX"
+END
+
+STRINGTABLE
+BEGIN
+    IDS_INVALID_SER_NO_MSG  "The license file (%s) has an invalid serial number. See Help/Register menu option on how to get a valid licence file."
+    IDS_HOW_TO_REG          "Contact the author at dikesh@bigfoot.com and provide the following registration number."
+    IDS_ABOUT_LEGAL         "This is a legal copy."
+    IDS_ABOUT_ILLEGAL       "This is an illegal copy."
+    IDS_SMVIEW              "Ticker,Company Name,Last,Change,Pct Change,Volume,High,Low,Last Traded,Date Picked"
+    IDS_SCRNVIEW            "Ticker,Company,Last,P/E,Yield,ROE,Debt/Equity,EPS Chg,Earnings Growth,Mkt Value"
+END
+
+STRINGTABLE
+BEGIN
+    ID_GETTECHNICALCHART_GETALLOFTHEABOVE 
+                            "Gets all charts types for all/selected tickers."
+    ID_PORTFOLIO_GETCOMPANYNAMES "Gets company names based on ticker symbol"
+    ID_PORTFOLIO_GETCOMPANYFUNDAMENTALS 
+                            "Get Balance Sheet, Income Statement and Performance data."
+    ID_VIEW_VIEWFUNDAMENTALS "Switch to the fundamental view"
+    ID_MENUITEM32853        "Gets all the above charts and merge in one HTML file"
+    ID_MENUITEM32854        "Merges all existing charts into one HTML"
+    ID_GETTECHNICALCHART_GETALLOFTHEABOVEANDMERGE 
+                            "Gets all charts types for all/selected tickers and merges into one HTML(<ticker.HTML>)."
+    ID_GETTECHNICALCHART_MERGEALLCHARTS 
+                            "Merges all existing charts for all/selected tickers into one HTML(<ticker.HTML>)."
+END
+
+STRINGTABLE
+BEGIN
+    ID_PORTFOLIO_DELOVERVALUED 
+                            "Deletes all stocks whose valuation is marked red in the valution view"
+    ID_FILE_IMPORT          "Import tickers"
+END
+
+STRINGTABLE
+BEGIN
+    ID_SUMMARY_INDIAALLVOLUMEGAINERS 
+                            "Get actives from Bombay,National and Calcutta exchanges in India"
+    ID_SUMMARY_INDIAALLPRICEGAINERS 
+                            "Get price gainers from Bombay,National and Calcutta exchanges in India"
+    ID_FILE_EXPORT          "Export ISM file to CSV"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif
+#include "res\StockMon.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
