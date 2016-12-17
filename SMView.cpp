@@ -3993,108 +3993,29 @@ void CSMView::OnPortfolioExport()
 	CSMDoc *pDoc = GetDocument();
 	ASSERT_VALID(pDoc);
 	CString strfn = pDoc->GetPathName();
-	strfn.Replace((LPCTSTR)"ism", (LPCTSTR)"csv");
+	strfn.Replace(_T("ism"), _T("csv"));
 	CString cost, profit;
 	CString  comm, qty, last, pctProfit;
 
 	CSingleLock sLock(&pDoc->m_mutex);
 	CFile fn;
-	fn.Open( strfn, CFile::modeCreate | CFile::modeWrite | CFile::typeText );
-	fn.Write((LPCTSTR)"Ticker", 6);
-	fn.Write((LPCTSTR)",",1);
+	fn.Open( strfn, CFile::modeCreate | CFile::modeWrite | CFile::typeUnicode );
+	fn.Write(_T("Ticker"), 12);
+	fn.Write(_T(","),2);
 
-	fn.Write((LPCTSTR)"Company Name", 12);
-	fn.Write((LPCTSTR)",",1);
-
-	fn.Write((LPCTSTR)"Bought at", 9);
-	fn.Write((LPCTSTR)",",1);
-
-	fn.Write((LPCTSTR)"Quantitiy", 9);
-	fn.Write((LPCTSTR)",",1);
-
-	fn.Write((LPCTSTR)"Cost", 4);
-	fn.Write((LPCTSTR)",",1);
-
-	fn.Write((LPCTSTR)"Close", 5);
-	fn.Write((LPCTSTR)",",1);
-
-	fn.Write((LPCTSTR)"Profit", 6);
-	fn.Write((LPCTSTR)",",1);
-
-	fn.Write((LPCTSTR)"% Profit", 8);
-
-	fn.Write((LPCTSTR)"\r\n", 2);
+	fn.Write(_T("Company Name"), 24);
+  fn.Write(_T("\r\n"), 4);
 
 	sLock.Lock();
 	for ( int i=0; i<pDoc->m_TickerArray.GetSize(); i++) {
 		CStkTicker *pTick = (CStkTicker *) pDoc->m_TickerArray[i];
 		if ( pTick) {
-			fn.Write(pTick->m_strSymbol, pTick->m_strSymbol.GetLength());
-			fn.Write((LPCTSTR)",",1);
+			fn.Write(pTick->m_strSymbol, pTick->m_strSymbol.GetLength()*2);
+			fn.Write(_T(","),2);
 
-			fn.Write(pTick->m_strCoName, pTick->m_strCoName.GetLength());
-			fn.Write((LPCTSTR)",",1);
+			fn.Write(pTick->m_strCoName, pTick->m_strCoName.GetLength()*2);
 
-			if ( pTick->m_Trades.GetCount()>0) {
-				CString strPrice;
-				strPrice = ((CTradeInf *)(pTick->m_Trades.GetAt(0)))->m_strPrice;
-				fn.Write(strPrice, strPrice.GetLength());
-			}
-			else {
-				fn.Write((LPCTSTR)"0", 1);
-			}
-			fn.Write((LPCTSTR)",",1);
-
-
-			if ( pTick->m_Trades.GetCount()>0) {
-				CString Qty;
-				Qty = ((CTradeInf *)(pTick->m_Trades.GetAt(0)))->m_strShares;
-				fn.Write(Qty, Qty.GetLength());
-			}
-			else {
-				fn.Write((LPCTSTR)"0", 1);
-			}
-			fn.Write((LPCTSTR)",",1);
-
-			if ( pTick->m_Trades.GetCount()>0) {
-				CString cost;
-				cost = ((CTradeInf *)(pTick->m_Trades.GetAt(0)))->m_strAmount;
-				fn.Write(cost, cost.GetLength());
-			}
-			else {
-				fn.Write((LPCTSTR)"0", 1);
-			}
-			fn.Write((LPCTSTR)",",1);
-
-			fn.Write(pTick->m_strLast, pTick->m_strLast.GetLength());
-			fn.Write((LPCTSTR)",",1);
-
-			if ( pTick->m_Trades.GetCount()>0) {
-				cost = ((CTradeInf *)(pTick->m_Trades.GetAt(0)))->m_strAmount;
-
-				qty = ((CTradeInf *)(pTick->m_Trades.GetAt(0)))->m_strShares ;
-				comm = ((CTradeInf *)(pTick->m_Trades.GetAt(0)))->m_strCommision ;
-				last = pTick->m_strLast ;
-
-
-				double sold = (_wtof((LPCTSTR)(qty)) * _wtof(LPCTSTR(last))) - _wtof(LPCTSTR(comm));
-				profit.Format((LPCTSTR)"$%9.2f", sold - _wtof((LPCTSTR)(cost.Mid(1,cost.GetLength()))));
-				pctProfit.Format((LPCTSTR)"%9.2f%", _wtof((LPCTSTR)(profit.Mid(1,cost.GetLength())).TrimLeft())/_wtof((LPCTSTR)(cost.Mid(1,cost.GetLength()))));
-				fn.Write(profit, profit.GetLength());
-			}
-			else {
-				fn.Write((LPCTSTR)"0", 1);
-			}
-			fn.Write((LPCTSTR)",",1);
-
-			if ( pTick->m_Trades.GetCount()>0) {
-				fn.Write(pctProfit, pctProfit.GetLength());
-			}
-			else {
-				fn.Write((LPCTSTR)"0", 1);
-			}
-
-			fn.Write((LPCTSTR)"\r\n", 2);
+			fn.Write(_T("\r\n"), 4);
 		}
 	}
 	sLock.Unlock();
