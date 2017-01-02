@@ -303,6 +303,7 @@ WCHAR *CSMApp::GetSerialNo()
 
 BOOL CSMApp::CheckLicKey(BOOL bMsg)
 {
+  return true;
   CString s;
   s = __DATE__;
   s.MakeReverse();
