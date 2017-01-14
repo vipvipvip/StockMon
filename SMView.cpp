@@ -3697,9 +3697,15 @@ void CSMView::OnUpdatePortfolioDelovervalued(CCmdUI* pCmdUI)
 
 void CSMView::OnFileImport() 
 {
-	CFileDialog dlg( TRUE,_T("TXT"),_T("*.TXT"),
+  static TCHAR BASED_CODE szFilter[] = _T("CSV Files (*.csv)|*.csv|")
+    _T("TXT Files (*.txt)|*.txt|")
+    _T("All Files (*.*)|*.*||");
+
+	CFileDialog dlg( TRUE,_T("CSV"),_T("*.CSV"),
 	                 OFN_HIDEREADONLY|OFN_OVERWRITEPROMPT|OFN_ALLOWMULTISELECT,
-	                 _T("Text File(*.TXT)|*.TXT|"));
+	                 //_T("Text File(*.TXT)|*.TXT|")
+    szFilter
+                  );
 
 	WCHAR szFn[10000];
 	memset(szFn, 0, sizeof(szFn));
