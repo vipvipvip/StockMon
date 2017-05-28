@@ -151,7 +151,7 @@ int CInternetThread::Run()
 									m_aWWW.CloseConnection();
 									bContinue=FALSE;
 								}
-                if (-1 != strIden.Find(_T("FUNDA")) || -1 != strIden.Find(_T("VALUE")) || -1 != strIden.Find(_T("RGB")) ) {
+                if (-1 != strIden.Find(_T("FUNDA")) || -1 != strIden.Find(_T("VALUE")) || -1 != strIden.Find(_T("RGB")) || -1 != strIden.Find(_T("TOP_HOLDINGS:")))  {
                   SendMessage(m_hOwner, READ_COMPLETED, (WPARAM)(LPCTSTR)strIden, (LPARAM)&msg);
                   strIden.Empty();
                 }

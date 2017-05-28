@@ -550,8 +550,7 @@ afx_msg LRESULT  CSMView::OnReadCompleted(WPARAM wParam, LPARAM lParam)
 	if( strTicker.IsEmpty() || strWebPageContent.IsEmpty() ){
 		return -1;
 	}
-
-	if ( -1 != strTicker.Find(_T("SCREEN"))) {
+  if ( -1 != strTicker.Find(_T("SCREEN"))) {
     if(CreateScreenWindow()) {
       m_pScreenVw->SendMessage(SHOW_SCREEN_STKS, (WPARAM)0, (LPARAM)(LPCTSTR)strWebPageContent);
     }
@@ -623,13 +622,18 @@ if ( -1 != strWebPageContent.Find((LPCTSTR)"Market Summary") ) {
     return 0;
   }
 
-	iPos = strTopHoldings.Find(_T("Top 10 Holdings"));
-	if ( -1 != iPos) {
-		CString st(strTopHoldings.Mid(iPos,strTopHoldings.GetLength()));
-		InsertTopHoldings(st);
-    return 0;
+  if (-1 != (iPos = strTicker.Find(_T("TOP_HOLDINGS")))) {
+    iPos = strTicker.ReverseFind(':');
+    iPos = strTopHoldings.Find(_T("Top 10 Holdings"));
+    if (-1 != iPos) {
+      CString st(strTopHoldings.Mid(iPos, strTopHoldings.GetLength()));
+      InsertTopHoldings(st);
+      return 0;
+    }
+    else {
+      return 0;
+    }
   }
-
 
 	if ( -1 != (iPos = strTicker.Find(_T("RGB")))) {
 		iPos = strTicker.ReverseFind(':');
@@ -4142,8 +4146,10 @@ void CSMView::SubmitReqForTopHolding(CStkTicker *pTicker)
 	CRequest *pReq=NULL;
 
 	strAddr = "http://";
-	strAddr += "finance.yahoo.com/q/hl?s=";
+  strAddr += "finance.yahoo.com/quote/";
 	strAddr += pTicker->m_strSymbol;
+  strAddr += "/holdings?p=";
+  strAddr += pTicker->m_strSymbol;
 
   strIden = "TOP_HOLDINGS:";
   strIden += pTicker->m_strSymbol;
@@ -4169,23 +4175,23 @@ void CSMView::InsertTopHoldings(CString& st)
 
 	//if ( st.Find((LPCTSTR)"Get Quotes for Top 10") <= 0 ) return;
 
-	int iStart,iPos;
+	int iStart,iPos, iPos2;
 	iPos=0;
 	iStart=0;
-	while ( st.Mid(iPos,1) != "+") iPos++;
+  CString token = "/quotes/";
 	CString s;
-	s = st.Mid(iPos-5,st.GetLength());
-	iPos = s.Find((LPCTSTR)"=");
-	int iPos2 = s.Find((LPCTSTR)"\"");
-	s = s.Mid(iPos+1,iPos2-iPos-1);
-	
+	iPos = st.Find(token);
+  s = st.Mid(iPos + 8, 100);
+  iPos = s.Find(CString("\""));
+  s = s.Left(iPos - 1);
 	CString s2;
-	while ( s2 = s.Tokenize((LPCTSTR)"+",iStart)){
+	while ( s2 = s.Tokenize((LPCTSTR)",",iStart)){
 		if (s2.IsEmpty()) break;
 		s2.TrimLeft();
 		s2.TrimRight();
 		if (s2.Find((LPCTSTR)".") > 0 ) continue;
-		if ( !FindInArray(s2) ) {
+    if (s2.Find((LPCTSTR)"N/A") > 0) continue; 
+    if ( !FindInArray(s2) ) {
 			CStkTicker *p = new CStkTicker();
 			p->m_strSymbol = s2;
 			sLock.Lock();
